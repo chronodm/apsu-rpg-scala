@@ -1,16 +1,9 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.github.maiflai:gradle-scalatest:0.4'
-    }
+plugins {
+    id "scala"
+    id "maven"
+    id "com.github.maiflai.scalatest" version "0.6-5-g9065d91"
+    id "application"
 }
-
-apply plugin: 'scala'
-apply plugin: 'maven'
-apply plugin: 'scalatest'
-apply plugin: 'application'
 
 group = 'apsu'
 version = '1.0-SNAPSHOT'
@@ -18,16 +11,13 @@ version = '1.0-SNAPSHOT'
 mainClassName = 'apsu.demo.rpg.RPG'
 
 ext {
-    scalaMajorVersion = '2.10'
-    scalaVersion = "${scalaMajorVersion}.3"
+    scalaMajorVersion = '2.11'
+    scalaVersion = "${scalaMajorVersion}.5"
 }
 
 repositories {
     mavenCentral()
     mavenLocal()
-    maven {
-        url 'http://repo.typesafe.com/typesafe/repo'
-    }
 }
 
 dependencies {
@@ -54,7 +44,7 @@ dependencies {
     // ------------------------------------------------------------
     // Testing
 
-    testCompile "org.scalatest:scalatest_${scalaMajorVersion}:2.0"
+    testCompile "org.scalatest:scalatest_${scalaMajorVersion}:2.2.4"
     testCompile 'junit:junit:4.11'
     testCompile 'org.mockito:mockito-core:1.9.5'
 
