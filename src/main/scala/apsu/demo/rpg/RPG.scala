@@ -6,7 +6,7 @@ package apsu.demo.rpg
  * @author david
  */
 object RPG {
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
 
   }
 }
